@@ -10,6 +10,6 @@
     <?php 
         $nome="Claude Shanon";
         echo "<h2>Olá $nome !!!</h2>" 
-        ?>
+    ?>
 </body>
 </html>
