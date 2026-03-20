@@ -13,14 +13,18 @@ services:
     environment:
       - PMA_ARBITRARY=1
   web:
-    image: nginx
+    build:
+      context: ./
+      dockerfile: Dockerfile-Nginx   
     ports:
       - "80:80"
     volumes:
       - ./meufrontend:/usr/share/nginx/html
 
   php-fpm:
-    image: php:8.3-fpm
-    container_name: php8.3-fpm
+    build:
+      context: ./
+      dockerfile: Dockerfile-Php8-Fpm
+    container_name: fzl-php8.3-fpm
     volumes:
       - ./:/var/www/html
